@@ -1,0 +1,1261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Magical Nest AI | Transforming Interior Design with Conversational Intelligence</title>
+    <meta name="description" content="Building the AI Operating System for interior design. From lead to dream room through continuous, intelligent conversation.">
+    
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;600;700&family=DM+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            /* Color System */
+            --cream: #FAF7F0;
+            --warm-brown: #8B6F47;
+            --deep-brown: #4A3728;
+            --burnt-orange: #D97742;
+            --sage: #9CAF88;
+            --charcoal: #2B2B2B;
+            --gold: #C9A961;
+            
+            /* Typography */
+            --font-display: 'Crimson Pro', serif;
+            --font-body: 'DM Sans', sans-serif;
+            
+            /* Spacing */
+            --section-padding: clamp(4rem, 12vw, 8rem);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: var(--font-body);
+            background: var(--cream);
+            color: var(--charcoal);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(250, 247, 240, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
+            animation: slideDown 0.6s ease-out;
+        }
+        
+        @keyframes slideDown {
+            from {
+                transform: translateY(-100%);
+            }
+            to {
+                transform: translateY(0);
+            }
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 1.5rem 3rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-brown);
+            letter-spacing: -0.02em;
+        }
+        
+        .logo span {
+            color: var(--burnt-orange);
+        }
+        
+        .nav-links {
+            display: flex;
+            gap: 2.5rem;
+            list-style: none;
+        }
+        
+        .nav-links a {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--burnt-orange);
+            transition: width 0.3s;
+        }
+        
+        .nav-links a:hover {
+            color: var(--burnt-orange);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .cta-button {
+            background: var(--burnt-orange);
+            color: white;
+            padding: 0.75rem 2rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s;
+            border: 2px solid var(--burnt-orange);
+        }
+        
+        .cta-button:hover {
+            background: transparent;
+            color: var(--burnt-orange);
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            padding: var(--section-padding);
+            padding-top: calc(var(--section-padding) + 5rem);
+            background: 
+                linear-gradient(135deg, rgba(201, 169, 97, 0.03) 0%, rgba(217, 119, 66, 0.03) 100%),
+                radial-gradient(circle at 20% 50%, rgba(156, 175, 136, 0.08) 0%, transparent 50%),
+                var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(217, 119, 66, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translate(0, 0) scale(1);
+            }
+            50% {
+                transform: translate(-30px, 30px) scale(1.05);
+            }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-text {
+            animation: fadeInUp 0.8s ease-out 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(40px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-label {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--sage), var(--gold));
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 0.5px;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+        }
+        
+        h1 {
+            font-family: var(--font-display);
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.1;
+            margin-bottom: 1.5rem;
+            color: var(--deep-brown);
+            letter-spacing: -0.02em;
+        }
+        
+        .hero-text h1 span {
+            background: linear-gradient(135deg, var(--burnt-orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle {
+            font-size: 1.35rem;
+            color: var(--warm-brown);
+            margin-bottom: 2.5rem;
+            line-height: 1.6;
+            font-weight: 400;
+        }
+        
+        .hero-cta {
+            display: flex;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .btn {
+            padding: 1rem 2.5rem;
+            border-radius: 30px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s;
+            display: inline-block;
+        }
+        
+        .btn-primary {
+            background: var(--burnt-orange);
+            color: white;
+            border: 2px solid var(--burnt-orange);
+        }
+        
+        .btn-primary:hover {
+            background: var(--deep-brown);
+            border-color: var(--deep-brown);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(139, 111, 71, 0.2);
+        }
+        
+        .btn-secondary {
+            background: transparent;
+            color: var(--charcoal);
+            border: 2px solid var(--charcoal);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--charcoal);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .hero-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(139, 111, 71, 0.2);
+        }
+        
+        .stat {
+            animation: fadeInUp 0.8s ease-out 0.6s both;
+        }
+        
+        .stat-number {
+            font-family: var(--font-display);
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--burnt-orange);
+            display: block;
+            margin-bottom: 0.25rem;
+        }
+        
+        .stat-label {
+            font-size: 0.9rem;
+            color: var(--warm-brown);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease-out 0.4s both;
+        }
+        
+        .visual-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 
+                0 20px 60px rgba(139, 111, 71, 0.1),
+                0 0 0 1px rgba(139, 111, 71, 0.05);
+            transform: rotate(-2deg);
+            transition: transform 0.3s;
+        }
+        
+        .visual-card:hover {
+            transform: rotate(0deg);
+        }
+        
+        .visual-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
+        }
+        
+        .visual-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--burnt-orange), var(--gold));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .visual-title {
+            font-family: var(--font-display);
+            font-size: 1.25rem;
+            font-weight: 600;
+            color: var(--deep-brown);
+        }
+        
+        .visual-metric {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(139, 111, 71, 0.05);
+        }
+        
+        .metric-label {
+            color: var(--warm-brown);
+            font-size: 0.9rem;
+        }
+        
+        .metric-value {
+            font-weight: 700;
+            color: var(--burnt-orange);
+            font-size: 1.1rem;
+        }
+        
+        .metric-value.positive {
+            color: var(--sage);
+        }
+        
+        /* Vision Section */
+        .vision {
+            padding: var(--section-padding);
+            background: white;
+            position: relative;
+        }
+        
+        .section-header {
+            max-width: 900px;
+            margin: 0 auto 4rem;
+            text-align: center;
+        }
+        
+        .section-label {
+            color: var(--burnt-orange);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        h2 {
+            font-family: var(--font-display);
+            font-size: clamp(2rem, 4vw, 3.5rem);
+            font-weight: 700;
+            color: var(--deep-brown);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        
+        .section-subtitle {
+            font-size: 1.25rem;
+            color: var(--warm-brown);
+            line-height: 1.6;
+        }
+        
+        .vision-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+        }
+        
+        .vision-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 3rem;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .vision-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--burnt-orange), var(--gold));
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.3s;
+        }
+        
+        .vision-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .vision-card:hover {
+            border-color: rgba(217, 119, 66, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(139, 111, 71, 0.1);
+        }
+        
+        .vision-number {
+            font-family: var(--font-display);
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--burnt-orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+        }
+        
+        .vision-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 600;
+            color: var(--deep-brown);
+            margin-bottom: 1rem;
+        }
+        
+        .vision-card p {
+            color: var(--warm-brown);
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+        }
+        
+        .vision-highlights {
+            list-style: none;
+        }
+        
+        .vision-highlights li {
+            padding-left: 2rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            color: var(--charcoal);
+            font-size: 0.95rem;
+        }
+        
+        .vision-highlights li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: var(--burnt-orange);
+            font-weight: 700;
+        }
+        
+        /* Architecture Section */
+        .architecture {
+            padding: var(--section-padding);
+            background: var(--deep-brown);
+            color: var(--cream);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .architecture::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 80% 20%, rgba(217, 119, 66, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(201, 169, 97, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+        }
+        
+        .architecture .section-header {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .architecture .section-label {
+            color: var(--gold);
+        }
+        
+        .architecture h2 {
+            color: var(--cream);
+        }
+        
+        .architecture .section-subtitle {
+            color: rgba(250, 247, 240, 0.8);
+        }
+        
+        .arch-diagram {
+            max-width: 1200px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .arch-layer {
+            background: rgba(250, 247, 240, 0.05);
+            border: 2px solid rgba(250, 247, 240, 0.1);
+            border-radius: 15px;
+            padding: 2.5rem;
+            margin-bottom: 2rem;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s;
+        }
+        
+        .arch-layer:hover {
+            background: rgba(250, 247, 240, 0.08);
+            border-color: rgba(217, 119, 66, 0.3);
+            transform: translateX(10px);
+        }
+        
+        .arch-layer-title {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--gold);
+        }
+        
+        .arch-layer-desc {
+            color: rgba(250, 247, 240, 0.7);
+            margin-bottom: 1.5rem;
+        }
+        
+        .arch-components {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .component-tag {
+            background: rgba(217, 119, 66, 0.2);
+            color: var(--cream);
+            padding: 0.5rem 1.25rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            border: 1px solid rgba(217, 119, 66, 0.3);
+        }
+        
+        /* Impact Section */
+        .impact {
+            padding: var(--section-padding);
+            background: linear-gradient(135deg, var(--cream) 0%, rgba(156, 175, 136, 0.1) 100%);
+        }
+        
+        .impact-grid {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2.5rem;
+        }
+        
+        .impact-card {
+            text-align: center;
+            padding: 2.5rem;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(139, 111, 71, 0.05);
+            transition: all 0.3s;
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(139, 111, 71, 0.1);
+        }
+        
+        .impact-metric {
+            font-family: var(--font-display);
+            font-size: 3.5rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--burnt-orange), var(--gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-label {
+            font-size: 1.1rem;
+            color: var(--charcoal);
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-desc {
+            color: var(--warm-brown);
+            font-size: 0.95rem;
+        }
+        
+        /* Backed By Section */
+        .backed-by {
+            padding: var(--section-padding);
+            background: white;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .backed-by::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -20%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(156, 175, 136, 0.06) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+        
+        .backed-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .backed-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin-bottom: 4rem;
+        }
+        
+        .backed-card {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 2.5rem;
+            text-align: center;
+            border: 2px solid transparent;
+            transition: all 0.3s;
+        }
+        
+        .backed-card:hover {
+            border-color: rgba(217, 119, 66, 0.2);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(139, 111, 71, 0.08);
+        }
+        
+        .backed-card.highlight {
+            background: linear-gradient(135deg, rgba(118, 185, 0, 0.08), rgba(118, 185, 0, 0.03));
+            border-color: rgba(118, 185, 0, 0.2);
+        }
+        
+        .backed-card.highlight:hover {
+            border-color: rgba(118, 185, 0, 0.4);
+            box-shadow: 0 15px 40px rgba(118, 185, 0, 0.15);
+        }
+        
+        .backed-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .backed-card h3 {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--deep-brown);
+            margin-bottom: 1rem;
+        }
+        
+        .backed-card p {
+            color: var(--warm-brown);
+            line-height: 1.7;
+            font-size: 0.95rem;
+        }
+        
+        .nvidia-badge {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            border-radius: 20px;
+            padding: 3rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            border: 2px solid rgba(118, 185, 0, 0.3);
+        }
+        
+        .nvidia-badge::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 50%, rgba(118, 185, 0, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .badge-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 2rem;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .badge-logo svg {
+            filter: drop-shadow(0 4px 12px rgba(118, 185, 0, 0.3));
+        }
+        
+        .badge-text {
+            text-align: left;
+        }
+        
+        .badge-title {
+            font-family: var(--font-display);
+            font-size: 1.75rem;
+            font-weight: 700;
+            color: white;
+            margin-bottom: 0.25rem;
+        }
+        
+        .badge-subtitle {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1rem;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+            background: white;
+        }
+        
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .contact-box {
+            background: var(--cream);
+            border-radius: 20px;
+            padding: 4rem 3rem;
+            margin-top: 3rem;
+            border: 2px solid rgba(139, 111, 71, 0.1);
+        }
+        
+        .contact-methods {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2.5rem;
+            flex-wrap: wrap;
+        }
+        
+        .contact-method {
+            background: white;
+            padding: 1.5rem 2.5rem;
+            border-radius: 15px;
+            border: 2px solid rgba(139, 111, 71, 0.1);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: var(--charcoal);
+        }
+        
+        .contact-method:hover {
+            border-color: var(--burnt-orange);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(139, 111, 71, 0.1);
+        }
+        
+        .contact-method-label {
+            font-size: 0.85rem;
+            color: var(--warm-brown);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .contact-method-value {
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: var(--burnt-orange);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-brown);
+            color: rgba(250, 247, 240, 0.7);
+            padding: 3rem;
+            text-align: center;
+        }
+        
+        .footer-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+        
+        .footer-logo {
+            font-family: var(--font-display);
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--cream);
+        }
+        
+        .footer-links {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+        }
+        
+        .footer-links a {
+            color: rgba(250, 247, 240, 0.7);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .footer-links a:hover {
+            color: var(--gold);
+        }
+        
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-content {
+                grid-template-columns: 1fr;
+                gap: 3rem;
+            }
+            
+            .vision-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .nav-links {
+                display: none;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 1rem 1.5rem;
+            }
+            
+            .hero {
+                padding: 3rem 1.5rem;
+                padding-top: 6rem;
+            }
+            
+            .hero-stats {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero-cta {
+                flex-direction: column;
+            }
+            
+            .contact-methods {
+                flex-direction: column;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .footer-links {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <div class="logo">Magical Nest <span>AI</span></div>
+            <ul class="nav-links">
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#backed-by">Backed By</a></li>
+                <li><a href="#backed-by">Backed By</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Get in Touch</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <div class="hero-label">Seed Funded • AI-First</div>
+                <h1>The <span>Conversational OS</span> for Interior Design</h1>
+                <p class="hero-subtitle">
+                    Transforming Global home interiors from disconnected transactions into a continuous, intelligent conversation—from lead to dream home.
+                </p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">Partner With Us</a>
+                    <a href="#vision" class="btn btn-secondary">Learn More</a>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="visual-card">
+                    <div class="visual-header">
+                        <div class="visual-icon">🎯</div>
+                        <div class="visual-title">Our Target Vision</div>
+                    </div>
+                    <div class="visual-metric">
+                        <span class="metric-label">Lead → Consult Conversion</span>
+                        <span class="metric-value positive">+20-35%</span>
+                    </div>
+                    <div class="visual-metric">
+                        <span class="metric-label">Designer Hours / Project</span>
+                        <span class="metric-value positive">-30-40%</span>
+                    </div>
+                    <div class="visual-metric">
+                        <span class="metric-label">Project Rework Reduction</span>
+                        <span class="metric-value positive">-20-30%</span>
+                    </div>
+                    <div class="visual-metric">
+                        <span class="metric-label">Customer NPS Improvement</span>
+                        <span class="metric-value">+10-20 pts</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision" id="vision">
+        <div class="section-header">
+            <div class="section-label">Our Vision</div>
+            <h2>From Transactions to Continuous Conversation</h2>
+            <p class="section-subtitle">
+                We're building an AI Operating System that orchestrates the entire interior design journey—from the first call to final handover—through one unified, intelligent conversation.
+            </p>
+        </div>
+        <div class="vision-grid">
+            <div class="vision-card">
+                <div class="vision-number">01</div>
+                <h3>The Problem</h3>
+                <p>
+                    Today's interior design experience is fragmented: slow follow-ups, repeated questions, confusion over pricing and timelines, anxiety about quality, and costly rework between design and execution.
+                </p>
+                <ul class="vision-highlights">
+                    <li>Parents face disconnected touchpoints</li>
+                    <li>Businesses lose leads to manual overhead</li>
+                    <li>Designers spend 30-40% time on admin</li>
+                    <li>Execution errors create trust issues</li>
+                </ul>
+            </div>
+            
+            <div class="vision-card">
+                <div class="vision-number">02</div>
+                <h3>Our Solution</h3>
+                <p>
+                    A conversational AI OS that unifies every channel—voice, WhatsApp, web—into one intelligent system with perfect memory, context, and governance.
+                </p>
+                <ul class="vision-highlights">
+                    <li>24/7 instant response across all channels</li>
+                    <li>RoomGraph: Single source of truth</li>
+                    <li>Modular skills, versioned like code</li>
+                    <li>Ledgered approvals & commitments</li>
+                </ul>
+            </div>
+            
+            <div class="vision-card">
+                <div class="vision-number">03</div>
+                <h3>AI-Augmented Journey</h3>
+                <p>
+                    Every step—from qualification to consultation to design to delivery—is powered by AI copilots that assist humans while maintaining trust through strict governance.
+                </p>
+                <ul class="vision-highlights">
+                    <li>Voice agents qualify & book consultations</li>
+                    <li>Consultation copilot extracts requirements</li>
+                    <li>Design copilot generates moodboards & BOQs</li>
+                    <li>Project manager copilot ensures delivery</li>
+                </ul>
+            </div>
+            
+            <div class="vision-card">
+                <div class="vision-number">04</div>
+                <h3>The Impact</h3>
+                <p>
+                    Measurable growth through higher conversions, operational leverage through automation, and unparalleled customer trust through consistency and transparency.
+                </p>
+                <ul class="vision-highlights">
+                    <li>20-35% lift in lead conversion</li>
+                    <li>30-40% reduction in designer hours</li>
+                    <li>20-30% less project rework</li>
+                    <li>10-20 point NPS increase</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Architecture Section -->
+    <section class="architecture" id="architecture">
+        <div class="section-header">
+            <div class="section-label">System Architecture</div>
+            <h2>Built for Autonomy, Safety & Scale</h2>
+            <p class="section-subtitle">
+                A layered architecture that strictly separates decision-making from execution, ensuring AI never directly changes reality without human oversight and tool governance.
+            </p>
+        </div>
+        <div class="arch-diagram">
+            <div class="arch-layer">
+                <div class="arch-layer-title">1. Interfaces (The Senses)</div>
+                <div class="arch-layer-desc">Where customer intents enter and artifacts are delivered</div>
+                <div class="arch-components">
+                    <span class="component-tag">Voice (Inbound/Outbound)</span>
+                    <span class="component-tag">WhatsApp</span>
+                    <span class="component-tag">Web</span>
+                    <span class="component-tag">Email</span>
+                    <span class="component-tag">Instagram</span>
+                </div>
+            </div>
+            
+            <div class="arch-layer">
+                <div class="arch-layer-title">2. Orchestrator (The Brain)</div>
+                <div class="arch-layer-desc">Routes requests, maintains state, ensures thread continuity</div>
+                <div class="arch-components">
+                    <span class="component-tag">Intent Routing</span>
+                    <span class="component-tag">Context Keeper</span>
+                    <span class="component-tag">Conflict Resolver</span>
+                    <span class="component-tag">Policy Gates</span>
+                </div>
+            </div>
+            
+            <div class="arch-layer">
+                <div class="arch-layer-title">3. Skills Layer (The Talents)</div>
+                <div class="arch-layer-desc">Modular capabilities, versioned and tested like code</div>
+                <div class="arch-components">
+                    <span class="component-tag">Qualification</span>
+                    <span class="component-tag">Consultation Copilot</span>
+                    <span class="component-tag">Design Review</span>
+                    <span class="component-tag">Costing & Proposals</span>
+                    <span class="component-tag">Project Management</span>
+                    <span class="component-tag">Visual QA</span>
+                </div>
+            </div>
+            
+            <div class="arch-layer">
+                <div class="arch-layer-title">4. Tool Layer (The Hands)</div>
+                <div class="arch-layer-desc">The ONLY way to change reality—all actions gated by policy</div>
+                <div class="arch-components">
+                    <span class="component-tag">CRM Updates</span>
+                    <span class="component-tag">Email/WhatsApp</span>
+                    <span class="component-tag">Calendar</span>
+                    <span class="component-tag">Payments</span>
+                    <span class="component-tag">Document Generation</span>
+                </div>
+            </div>
+            
+            <div class="arch-layer">
+                <div class="arch-layer-title">5. RoomGraph (The Memory)</div>
+                <div class="arch-layer-desc">Unified knowledge graph—single source of truth for all agents</div>
+                <div class="arch-components">
+                    <span class="component-tag">Household</span>
+                    <span class="component-tag">Project</span>
+                    <span class="component-tag">Room</span>
+                    <span class="component-tag">Design Versions</span>
+                    <span class="component-tag">Commitments</span>
+                    <span class="component-tag">Tasks</span>
+                    <span class="component-tag">Approvals Ledger</span>
+                </div>
+            </div>
+            
+            <div class="arch-layer">
+                <div class="arch-layer-title">6. Intelligence & Governance (The Conscience)</div>
+                <div class="arch-layer-desc">Ensures safety, observability, and trust</div>
+                <div class="arch-components">
+                    <span class="component-tag">Hallucination Control</span>
+                    <span class="component-tag">PII Vault</span>
+                    <span class="component-tag">Conversation Tracing</span>
+                    <span class="component-tag">Conflict Detection</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact" id="impact">
+        <div class="section-header">
+            <div class="section-label">Target Impact</div>
+            <h2>Designed for Measurable Business Value</h2>
+        </div>
+        <div class="impact-grid">
+            <div class="impact-card">
+                <div class="impact-metric">+25%</div>
+                <div class="impact-label">Lead → Consult</div>
+                <div class="impact-desc">Conversion increase through 24/7 instant qualification</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-metric">+15%</div>
+                <div class="impact-label">Consult → Order</div>
+                <div class="impact-desc">Better brief quality leads to higher closing rates</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-metric">-35%</div>
+                <div class="impact-label">Designer Hours</div>
+                <div class="impact-desc">Per project through automated admin & requirement capture</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-metric">-25%</div>
+                <div class="impact-label">Project Rework</div>
+                <div class="impact-desc">Visual QA catches discrepancies before delivery</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-metric">+15</div>
+                <div class="impact-label">NPS Points</div>
+                <div class="impact-desc">Transparency & consistency build trust</div>
+            </div>
+            <div class="impact-card">
+                <div class="impact-metric">-30%</div>
+                <div class="impact-label">Cost per Qualified Lead</div>
+                <div class="impact-desc">Automated qualification eliminates wasted effort</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Backed By Section -->
+    <section class="backed-by" id="backed-by">
+        <div class="backed-container">
+            <div class="section-header">
+                <div class="section-label">Backed By Excellence</div>
+                <h2>Built by Passionate Builders, Supported by the Best</h2>
+                <p class="section-subtitle">
+                    Our team combines deep interior design domain expertise with cutting-edge AI capabilities, guided by industry-leading mentors and supported by top-tier angel investors.
+                </p>
+            </div>
+            
+            <div class="backed-grid">
+                <div class="backed-card">
+                    <div class="backed-icon">🚀</div>
+                    <h3>Passionate Tech Team</h3>
+                    <p>
+                        Experienced builders combining deep interior design domain expertise with cutting-edge capabilities in AI, LLMs, and scalable systems architecture.
+                    </p>
+                </div>
+                
+                <div class="backed-card">
+                    <div class="backed-icon">🎓</div>
+                    <h3>Top AI Mentors</h3>
+                    <p>
+                        Guided by leading experts in conversational AI, agentic systems, and production ML deployment who've scaled AI products at top companies.
+                    </p>
+                </div>
+                
+                <div class="backed-card">
+                    <div class="backed-icon">👥</div>
+                    <h3>Best-in-Class Angels</h3>
+                    <p>
+                        Backed by successful founders and operators who've built and scaled consumer businesses, marketplaces, and AI-first companies.
+                    </p>
+                </div>
+                
+                <div class="backed-card highlight">
+                    <div class="backed-icon">🏆</div>
+                    <h3>NVIDIA Inception Program</h3>
+                    <p>
+                        Selected for NVIDIA's exclusive startup acceleration program, gaining access to cutting-edge AI infrastructure, technical support, and go-to-market resources.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="contact-container">
+            <div class="section-header">
+                <div class="section-label">Get in Touch</div>
+                <h2>Let's Build the Future of Interior Design Together</h2>
+                <p class="section-subtitle">
+                    Whether you're an investor, accelerator, or strategic partner—we'd love to connect and explore how AI can transform this space.
+                </p>
+            </div>
+            <div class="contact-box">
+                <div class="contact-methods">
+                    <a href="mailto:care@magicalnest.ai" class="contact-method">
+                        <div class="contact-method-label">Email Us</div>
+                        <div class="contact-method-value"><span class="__cf_email__" data-cfemail="2149444d4d4e614c40464842404d4f4452550f4048">care@magicalnest.ai</span></div>
+                    </a>
+                    <a href="https://magicalnest.com" class="contact-method" target="_blank">
+                        <div class="contact-method-label">Visit Core Business</div>
+                        <div class="contact-method-value">magicalnest.com</div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">Magical Nest AI</div>
+            <ul class="footer-links">
+                <li><a href="#vision">Vision</a></li>
+                <li><a href="#architecture">Architecture</a></li>
+                <li><a href="#impact">Impact</a></li>
+                <li><a href="#backed-by">Backed By</a></li>
+                <li><a href="https://magicalnest.com">Main Website</a></li>
+            </ul>
+            <div>© 2026 Magical Nest AI. Building the future of interior design.</div>
+        </div>
+    </footer>
+</body>
+</html>
